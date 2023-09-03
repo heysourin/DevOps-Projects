@@ -1,0 +1,20 @@
+"apple": "I am a red fruit"
+1: "This is a number"
+
+---
+
+# lists:
+- apple
+- mango
+- banana
+- Apple #yaml is case sensitive
+---
+
+cities:
+ - new delhi
+ - mumbai
+ - gujat
+---
+
+{mango: "Noice fruit",age:56}
+...

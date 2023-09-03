@@ -1,0 +1,85 @@
+student: !!seq
+  - marks
+  - name
+  - roll_no
+
+# like this also
+cities: [new delhi, mumbai]
+
+# some of the keys of the sequence will be empty ~ sparse seq
+
+sparse sq:
+  - hey
+  - how
+  -
+  - Null
+  - sup
+
+# nested sequence
+person:
+  - name: Luke
+    hobbies:
+      - sports
+      - music
+  - name: Ryan
+    hobbies:
+      - movies
+      - cooking
+  - name: Thomas
+    hobbies:
+      - swimming
+      - tennis:
+          - table_tennis
+          - lawn_tennis
+
+
+#maps ~ key value pair !!map
+
+## nested mapping
+name: Ryle Phoenix
+role:
+  title : Developer
+  company  : GeeksforGeeks
+food: {lunch: rice, dinner: momos}
+
+#pairs: keys may have duplicate values~ !!pairs
+
+pair example: !!pairs
+  - job: student
+  - job: student
+
+#= !!set will allow to have unique values
+names: !!set
+  ?ryle
+  ?professor
+  ?oslo
+
+#dictioanry !!omap
+people: !!omap
+  - Ryle:
+      name: Ryle Phoenix
+      age: 98
+  - Oslo:
+      name: Oslo Steven
+      age: 32
+
+
+# Reusing some properties
+likings: &likes
+  fav fruit: mango
+  dislikes: grapes
+
+person2:
+  name: Ryle
+  fav fruit: mango
+  dislikes: grapes
+
+person3:
+  name: Professor
+  fav fruit: mango
+  dislikes: grapes
+
+person4:
+  <<: *likes #* means copy the contents of person1 into this file.
+
+
